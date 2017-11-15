@@ -31,33 +31,42 @@ hence ** Approach 1 adopted **
 
 
 
-/**  Variables for Products(assume ES5)  **/
-
-
-
-
-
 
 
 /** Scan list and identify products with offers **/
 
+function scan(){
+/**  Variables for products **/
 
+//var lowestList = [];
+    var allProducts = document.querySelectorAll('article[data-sku]');
+    for (var i=0; i < allProducts.length; i++ ){
+      console.log("allProducts.length " + allProducts.length);
+      var sku = allProducts[i].getAttribute('data-sku');
+       //console.log(" sku of article " + i + " is = " + sku);
+    };
 
-
-
-
-
+  //return lowestList;
+};
 
 
 /** identify artcles containing all the product data, convert and save to array **/
 
+/*function oderedProdArray(){
+
+/** find lowest 4 priced with offers **/
+
+/*var list = [];
+
+/*list = scan();
 
 
-
-
-
+/*};
 
 
 
 
 /** Save array on localStorage  **/
+
+
+scan();
