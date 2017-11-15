@@ -29,44 +29,43 @@ Also sorting through is likley to be slower,
 hence ** Approach 1 adopted **
 *********************************************/
 
+  /** Filter products with offers **/
+  function scan(){
+  //var lowestList = [];
 
 
+  var allProductOffers = document.querySelectorAll('.offer');
+    for (var i=0; i < allProductOffers.length; i++ ){
+  //console.log("allProductOffers.length " + allProductOffers.length);
+  var allProductOffersArticle = allProductOffers[i].parentElement;
+  var skuData = allProductOffersArticle.getAttribute('data-sku');
+  console.log("skuData = " + skuData);
+  
 
+  };
 
-/** Scan list and identify products with offers **/
-
-function scan(){
-/**  Variables for products **/
-
-//var lowestList = [];
-    var allProducts = document.querySelectorAll('article[data-sku]');
-    for (var i=0; i < allProducts.length; i++ ){
-      console.log("allProducts.length " + allProducts.length);
-      var sku = allProducts[i].getAttribute('data-sku');
-       //console.log(" sku of article " + i + " is = " + sku);
-    };
 
   //return lowestList;
-};
+  };
 
 
-/** identify artcles containing all the product data, convert and save to array **/
+  /** identify artcles containing all the product data, convert and save to array **/
 
-/*function oderedProdArray(){
+  /*function oderedProdArray(){
 
-/** find lowest 4 priced with offers **/
+  /** find lowest 4 priced with offers **/
 
-/*var list = [];
+  /*var list = [];
 
-/*list = scan();
-
-
-/*};
+  /*list = scan();
 
 
+  /*};
 
 
-/** Save array on localStorage  **/
 
 
-scan();
+  /** Save array on localStorage  **/
+
+
+  scan();
