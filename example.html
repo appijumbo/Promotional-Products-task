@@ -1,0 +1,169 @@
+<!--
+	Requirements: Without modifying the html below, use JS(and Jquery if you like) to fetch the 4 cheapest products which have an offer.
+	The returned products need to be stored in an array of objects, and placed in a method of storage(up to you - maybe local?), that you can access on another page for display.
+	Data and format we need for each product:
+		- Product SKU
+		- Product Title (Just the title, Without any offer information and without any padding)
+		- Product Url
+		- Product Image Url
+		- Product price as a float value (without currency or padding)
+		- The offer Text for the product (without padding)
+
+	The Products must be ordered from lowest to highest price
+	Only 4 Products should be stored
+-->
+<html>
+	<head>
+		<title>Test Page</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script>
+			
+			/* Your code goes here */
+
+		</script>
+	</head>
+	<body>
+		<h1>Promotional Products</h1>
+		<ul class="nav">
+			<li><a href="/">Home</a></li>
+			<li><a href="/cat1">Category 1</a></li>
+			<li><a href="/cat2">Category 2</a></li>
+			<li><a href="/cat3">Category 3</a></li>
+		</ul>
+		<ul class="products">
+			
+			<li class="product">
+				<article data-sku="1001">
+					<a href="/sku1001">
+						<img src="img/image1.png" />
+						<h3>Mature Cheddar</h3>
+					</a>
+					<span class="price"> &pound; 1.99</span>
+					<span class="offer">3 for £5</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="1234">
+					<a href="/sk1234">
+						<img src="img/image2.png" />
+						<h3>Mild Cheddar</h3>
+					</a>
+					<span class="price"> &pound; 1.99</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="4321">
+					<a href="/sku4321">
+						<img src="img/image3.png" />
+						<h3>Pork Sausages</h3>
+					</a>
+					<span class="price"> &pound; 2.99</span>
+					<span class="offer">2 for £5</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="1213">
+					<a href="/sku1213">
+						<img src="img/image4.png" />
+						<h3>Chicken Fillets</h3>
+					</a>
+					<span class="price"> &pound;3.50</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="1421">
+					<a href="/sku1421">
+						<img src="img/image5.png" />
+						<h3><span>New!</span>Low Fat Yoghurt</h3>
+					</a>
+					<span class="price"> 99p</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="1845">
+					<a href="/sku1845">
+						<img src="img/image6.png" />
+						<h3>Tomato Soup</h3>
+					</a>
+					<span class="price">£1</span>
+					<span class="offer">3 for £2</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="1953">
+					<a href="/sku1953">
+						<img src="img/image7.png" />
+						<h3>Chicken Soup</h3>
+					</a>
+					<span class="price"> &pound; 1.99</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="2532">
+					<a href="/potatosoup/">
+						<img src="img/image8.png" />
+						<h3>Leek and Potato Soup</h3>
+					</a>
+					<span class="price">&pound;0.75</span>
+					<span class="offer">Was &pound;1.99</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="1736">
+					<a href="/sku1736">
+						<img src="img/image9.png" />
+						<h3>Diet Cola</h3>
+					</a>
+					<span class="price"> &pound; 1.50</span>
+					<span class="offer">3 for £5</span>
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+
+			<li class="product">
+				<article data-sku="4331">
+					<a href="/sku4331">
+						<img src="img/image10.png" />
+						<h3>Orange Juice <span> Meal Deal! </span></h3>
+					</a>
+					<span class="price"> 70p</span>
+					<span class="offer">Breakfast Meal Deal</span>	
+					<button class="buyBtn">Buy Now</button>
+				</article>
+			</li>
+			
+		</ul>
+		<h3>
+			Other Links
+		</h3>
+		<ul class="footerLinks">
+			<li><a href="/">Home</a></li>
+			<li><a href="/cat1">Category 1</a></li>
+			<li><a href="/cat2">Category 2</a></li>
+			<li><a href="/cat3">Category 3</a></li>
+		</ul>
+
+		<style>
+		.nav, .footerLinks { background: #e2e2e2; padding: 10px 0px; }
+		ul { float: left; width: 100%; list-style-type: none;}
+		ul li { float: left; width: 200px; margin: 10px;text-align: center; border: 1px solid #e2e2e2; padding-bottom: 10px;}
+		span.offer, h3 span { color: red; }
+		</style>
+	</body>
+</html>
