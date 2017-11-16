@@ -27,15 +27,70 @@ Approach 2 (modified)
 ** Approach 2 adopted **
 *********************************************/
 
-
 /* switch to jQuery because solution seemes more direct */
 
-(function($){
+
+/* closure to avoid globals plus ensure jquery ready)*/
+(function(document, $){
 
 
-  /** identify artcles containing all the product data **/
+allOffers = [];
 
-  /** Sanitise data and save to an object **/
+
+  function aquireOffers(){
+
+    var article = $('.offer');
+
+  	$('.offer').each(function(index){ // Sanitise data and save to an object
+  		var parent = article[index].parentElement;
+  		var title = $(parent).find("h3")[0].childNodes[0].data.trim();
+  		var sku = $(parent).attr( "data-sku");
+      var url = $(parent).find('img').attr('src');
+
+
+      //var priceData = $(parent).find('span.price')[0].childNodes[0].data;
+      var priceStr = $(parent).find('span.price').html();
+      // https://regex101.com/   an   http://bit.ly/2AMzpgA
+      var priceClean = parseFloat(priceStr.replace(/[£,\s, p]+/g,""));
+      if(priceStr.match(/[p]+/g)){
+        console.log("real price is = "+ priceClean/100);
+        priceClean = priceClean/100;
+      };
+
+      var offerStr = $(parent).find('span.offer').html().trim();
+
+  		var productObj = {
+  			"SKU": sku,
+  			"Title": title,
+  			"Url": url,
+  			"Price":priceClean,
+  			"Offer":offerStr
+  			}
+
+        allOffers.push(productObj);
+
+        console.log(productObj);
+
+  	});
+
+  }
+
+
+
+function sortOffers(){
+
+console.log("ok?");
+
+}
+
+
+
+  aquireOffers();
+
+  sortOffers();
+
+
+
 
    /** push this object to Array **/
 
@@ -50,4 +105,4 @@ Approach 2 (modified)
 
 
 
-})(jQuery);
+  })(window.document, jQuery);
