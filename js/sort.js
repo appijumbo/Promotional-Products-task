@@ -67,6 +67,7 @@ allOffers = [];
   			Offer:offerStr
       };
 
+        /** push this object to create array storage **/
         allOffers.push(productObj);
 
 
@@ -77,47 +78,39 @@ allOffers = [];
   }
 
 
-
+/** Sort Array in order of Price lowest to highest **/
 function sortOffers(){
 
-console.log("allOffers before sort " + JSON.stringify(allOffers));
+  console.log("allOffers before sort " + JSON.stringify(allOffers));
 
-allOffers.sort(function(a, b){
-    return a.Price-b.Price
-})
-
-console.log("allOffers after sort  " + JSON.stringify(allOffers));
-
-
+  allOffers.sort(function(a, b){
+      return a.Price-b.Price
+  })
+  console.log("allOffers after sort  " + JSON.stringify(allOffers));
   console.log("Offers sorted -->/n");
   console.log(allOffers);
-}
+};
 
+/** Slice array keeping the first 4 prices **/
 function lowestFourOffers(){
+var theLowestOffers = allOffers.slice(0, 4);
+console.log("theLowestOffers" + JSON.stringify(theLowestOffers));
+return JSON.stringify(theLowestOffers);
 
-  console.log("ok ok ok ");
+};
+
+
+/** Save array on localStorage  **/
+function lowestToLocal(){
+  console.log("Save lowest 4 offers to local");
+  localStorage.setItem('lowestFourOffers', lowestFourOffers());
 };
 
   aquireOffers();
 
   sortOffers();
 
-  lowestFourOffers();
-
-
-
-
-   /** push this object to Array **/
-
-
-
-  /** Sort Array in order of Price lowest to highest **/
-
-  /** Slice array keeping the first 4 prices **/
-
-
-  /** Save array on localStorage  **/
-
+  lowestToLocal();
 
 
   })(window.document, jQuery);
