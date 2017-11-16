@@ -15,57 +15,39 @@ Approach 1
 
 ----
 
-Approach 2
-1) Go through every article containing an offer and save its data into an array of objects.
+Approach 2 (modified)
 
-2) Sort through this array finding the lowest vakue products and copy this data into another array of objects
+1) Go through every article containing an offer and save its data, modified and sanitised, into an array of objects.
 
-3) Put this array into localStorage
+2) Sort through the array ordering by the lowest to highest value products
+
+3) Split this array to just have first 4 and put this array into localStorage for viwing on other page
 
 
-Approach 2 seems less elegant as you end up with a large array of objects that, if there were a lot of products, is large.
-Also sorting through is likley to be slower,
-
-hence ** Approach 1 adopted **
+** Approach 2 adopted **
 *********************************************/
 
-  /** Filter products with offers **/
-  function scan(){
-  //var lowestList = [];
+
+/* switch to jQuery because solution seemes more direct */
+
+(function($){
 
 
-  var allProductOffers = document.querySelectorAll('.offer');
-    for (var i=0; i < allProductOffers.length; i++ ){
-  //console.log("allProductOffers.length " + allProductOffers.length);
-  var allProductOffersArticle = allProductOffers[i].parentElement;
-  var skuData = allProductOffersArticle.getAttribute('data-sku');
-  console.log("skuData = " + skuData);
-  
+  /** identify artcles containing all the product data **/
 
-  };
+  /** Sanitise data and save to an object **/
+
+   /** push this object to Array **/
 
 
-  //return lowestList;
-  };
 
+  /** Sort Array in order of Price lowest to highest **/
 
-  /** identify artcles containing all the product data, convert and save to array **/
-
-  /*function oderedProdArray(){
-
-  /** find lowest 4 priced with offers **/
-
-  /*var list = [];
-
-  /*list = scan();
-
-
-  /*};
-
-
+  /** Slice array keeping the first 4 prices **/
 
 
   /** Save array on localStorage  **/
 
 
-  scan();
+
+})(jQuery);
