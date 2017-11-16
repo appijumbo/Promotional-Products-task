@@ -60,18 +60,19 @@ allOffers = [];
       var offerStr = $(parent).find('span.offer').html().trim();
 
   		var productObj = {
-  			"SKU": sku,
-  			"Title": title,
-  			"Url": url,
-  			"Price":priceClean,
-  			"Offer":offerStr
-  			}
+  			SKU: sku,
+  			Title: title,
+  			Url: url,
+  			Price:priceClean,
+  			Offer:offerStr
+      };
 
         allOffers.push(productObj);
 
-        console.log(productObj);
 
   	});
+
+    console.log(allOffers);
 
   }
 
@@ -79,15 +80,29 @@ allOffers = [];
 
 function sortOffers(){
 
-console.log("ok?");
+console.log("allOffers before sort " + JSON.stringify(allOffers));
 
+allOffers.sort(function(a, b){
+    return a.Price-b.Price
+})
+
+console.log("allOffers after sort  " + JSON.stringify(allOffers));
+
+
+  console.log("Offers sorted -->/n");
+  console.log(allOffers);
 }
 
+function lowestFourOffers(){
 
+  console.log("ok ok ok ");
+};
 
   aquireOffers();
 
   sortOffers();
+
+  lowestFourOffers();
 
 
 
