@@ -1,3 +1,4 @@
+
 <!--
 	Requirements: Without modifying the html below, use JS(and Jquery if you like) to fetch the 4 cheapest products which have an offer.
 	The returned products need to be stored in an array of objects, and placed in a method of storage(up to you - maybe local?), that you can access on another page for display.
@@ -12,15 +13,15 @@
 	The Products must be ordered from lowest to highest price
 	Only 4 Products should be stored
 -->
-<html>
-	<head>
-		<title>Test Page</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script>
-			
-			/* Your code goes here */
+<!DOCTYPE html>
+<html lang="en">
 
-		</script>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Product View</title>
+
 	</head>
 	<body>
 		<h1>Promotional Products</h1>
@@ -30,8 +31,13 @@
 			<li><a href="/cat2">Category 2</a></li>
 			<li><a href="/cat3">Category 3</a></li>
 		</ul>
+
+
+
+		<div id="generatedProductsPlaceholder"></div>
+
+
 		<ul class="products">
-			
 			<li class="product">
 				<article data-sku="1001">
 					<a href="/sku1001">
@@ -143,11 +149,11 @@
 						<h3>Orange Juice <span> Meal Deal! </span></h3>
 					</a>
 					<span class="price"> 70p</span>
-					<span class="offer">Breakfast Meal Deal</span>	
+					<span class="offer">Breakfast Meal Deal</span>
 					<button class="buyBtn">Buy Now</button>
 				</article>
 			</li>
-			
+
 		</ul>
 		<h3>
 			Other Links
@@ -165,5 +171,7 @@
 		ul li { float: left; width: 200px; margin: 10px;text-align: center; border: 1px solid #e2e2e2; padding-bottom: 10px;}
 		span.offer, h3 span { color: red; }
 		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="./js/productControler.js"></script>
 	</body>
 </html>
